@@ -14,7 +14,7 @@ def getData(URL):
         links.append(i.get("href"))
 
     for link in links:
-        if link.__contains__("Archives/edgar/data") and link.__contains__("xml") and link.__contains__("xsl"):
+        if link.__contains__("Archives/edgar/data") and link.__contains__("xml") and not(link.__contains__("xsl")):
             goodLinks.append("https://www.sec.gov/"+link)
     return goodLinks[0]
 
