@@ -1,10 +1,12 @@
 from collectLinks import collectLinks
 from getDoc import getDoc
 from getData import getData
+from readData import readData
 
 links = collectLinks()
 i=0
 for link in links:
-    print(getDoc(link))
+    print(link)
+    readData(getDoc(link))
     i+=1
     print(i)

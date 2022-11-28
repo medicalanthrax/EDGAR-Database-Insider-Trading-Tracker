@@ -12,13 +12,17 @@ def readData(URL):
     date = soup.periodOfReport.text
     name = soup.issuerName.text
     ticker = soup.issuerTradingSymbol.text
-    isDirector = soup.isDirector.text
-    isOfficer = soup.isOfficer.text
+    if(soup.isDirector) != None:
+        isDirector = soup.isDirector.text
+    else: isDirector = "0"
+    if(soup.isOfficer) != None:
+        isOfficer = soup.isOfficer.text
+    else: isOfficer = "0"
     isOther = soup.isOther.text
     if isOfficer == "1":
         officerTitle = soup.officerTitle.text
+    else: officerTitle = ""
     
-
+    
     print(date+name+ticker+isDirector+isOfficer+isOther+officerTitle)
 
-readData("https://www.sec.gov//Archives/edgar/data/1463172/000146317222000368/wf-form4_166942720012433.xml")
