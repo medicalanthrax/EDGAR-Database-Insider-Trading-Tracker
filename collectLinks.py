@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 def collectLinks():
-    URL = "https://www.sec.gov/cgi-bin/browse-edgar?company=&CIK=&type=4&owner=include&count=100&action=getcurrent"
+    URL = "https://www.sec.gov/cgi-bin/browse-edgar?company=&CIK=&type=4&owner=only&count=100&action=getcurrent"
     headers = {
         "User-Agent" : "Carlo Tran carlotran4@gmail.com"
     }
