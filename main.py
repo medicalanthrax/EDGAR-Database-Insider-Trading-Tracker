@@ -1,6 +1,5 @@
 from collectLinks import collectLinks
 from getDoc import getDoc
-from getData import getData
 from readData import readData
 
 links = collectLinks()
