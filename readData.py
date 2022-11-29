@@ -18,11 +18,16 @@ def readData(URL):
     if(soup.isOfficer) != None:
         isOfficer = soup.isOfficer.text
     else: isOfficer = "0"
-    isOther = soup.isOther.text
+    if soup.isOther != None :
+        isOther = soup.isOther.text
+    else: isOther = "0"
     if isOfficer == "1":
         officerTitle = soup.officerTitle.text
     else: officerTitle = ""
-    
+
+    footnote = soup.find_all("footnote")
+    print(footnote)
     
     print(date+name+ticker+isDirector+isOfficer+isOther+officerTitle)
 
+readData("https://www.sec.gov/Archives/edgar/data/764897/000106299322022843/form4.xml")
