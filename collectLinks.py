@@ -20,4 +20,3 @@ def collectLinks():
 
     return goodLinks
 
-print(collectLinks()," ", len(collectLinks()))
