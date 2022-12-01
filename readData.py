@@ -25,7 +25,14 @@ def readData(URL):
 	if isOfficer == "1":
 		officerTitle = soup.officerTitle.text
 	else: officerTitle = ""
+
+	title = ""
+	if isDirector == "1": title+="Director,"
+	if isOfficer =="1" and len(officerTitle)>0: title+=officerTitle+","
+	elif isOfficer =="1": title+="Officer,"
+	if isOther == "1": title+= "Other"
 	
+
 	derivativeTransactions = soup.find_all("derivativeTransaction")
 	nonDerivativeTransactions = soup.find_all("nonDerivativeTransaction")
 
@@ -45,8 +52,8 @@ def readData(URL):
 			text(i.transactionShares.value)
 		])
 		
-	transactions.append([name])
-	return (transactions)
+	return ([date,name,ticker,title,transactions])
 
+#test cases
 #print(readData("https://www.sec.gov/Archives/edgar/data/764897/000106299322022843/form4.xml"))
 #print(readData("https://www.sec.gov/Archives/edgar/data/919567/000120709722000460/primary_doc.xml"))
