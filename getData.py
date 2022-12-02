@@ -5,7 +5,7 @@ def getData(URL):
     headers = {
         "User-Agent" : "Carlo Tran carlotran4@gmail.com"
     }
-    page = requests.get(URL, headers=headers)
+    page = requests.get(URL, headers=headers,timeout=30)
     soup = BeautifulSoup(page.content,"html.parser")
 
     links = []

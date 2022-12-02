@@ -1,3 +1,4 @@
+#import PySimpleGUI as sg
 from collectLinks import collectLinks
 from getDoc import getDoc
 from readData import readData
