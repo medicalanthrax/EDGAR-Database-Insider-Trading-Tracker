@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import time
 from getData import getData
 def getDoc(URL):
     headers = {

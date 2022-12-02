@@ -15,8 +15,9 @@ def collectLinks():
         links.append(link.get("href"))
 
     for link in links:
-        if link.__contains__("cgi-bin") and not(link.__contains__("file")) and not(link.__contains__("getcurrent")):
+        if (link.__contains__("cgi-bin") 
+        and not link.__contains__("file") 
+        and not link.__contains__("getcurrent")):
             goodLinks.append("https://www.sec.gov/"+link)
 
     return goodLinks
-
