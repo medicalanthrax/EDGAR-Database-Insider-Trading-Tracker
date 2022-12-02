@@ -1,5 +1,6 @@
-#to prevent Nonetype errors when calling .text
+"""Contains the text() method"""
 def text(field):
-    if field != None: 
+    """Prevent noneType errors when calling .text on objects in read_data."""
+    if field is not None:
         return field.text
     return "N/A"
