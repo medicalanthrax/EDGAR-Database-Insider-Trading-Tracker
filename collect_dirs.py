@@ -63,7 +63,7 @@ def collect_dirs(url="https://www.sec.gov/cgi-bin/browse-edgar?company=&CIK=&typ
         for i in acc_no:
             if i == line[0:len(line)-1]:
                 cik.pop(acc_no.index(i))
-                acc_no.remove(i)
+                acc_no.remove(i)       # pylint: disable = W4701
 
     # append new acc No's to file.
     file.close()
