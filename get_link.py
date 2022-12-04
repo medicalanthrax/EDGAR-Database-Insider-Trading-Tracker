@@ -1,8 +1,8 @@
-"""Contains collect_links"""
+"""Contains get_link"""
 import requests
 from bs4 import BeautifulSoup
 
-def collect_links(directory):
+def get_link(directory):
     """Given a directory, find the link to the xml document.
 
     Parameter dir: https://www.sec.gov/Archives/edgar/data/CIK/Acc_No
