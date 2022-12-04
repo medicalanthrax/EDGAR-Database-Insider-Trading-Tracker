@@ -2,7 +2,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-def collect_links(dir):
+def collect_links(directory):
     """Given a directory, find the link to the xml document.
 
     Parameter dir: https://www.sec.gov/Archives/edgar/data/CIK/Acc_No
@@ -13,11 +13,9 @@ def collect_links(dir):
     headers = {
         "User-Agent": "Carlo Tran carlotran4@gmail.com"
     }
-    page= requests.get(dir,headers=headers,timeout=30)
+    page= requests.get(directory,headers=headers,timeout=30)
     soup = BeautifulSoup(page.content,"html.parser")
     for i in soup.find_all("a"):
         if ".xml" in str(i):
             link = i.get("href")
     return f"https://www.sec.gov/{link}"
-
-print(collect_links("https://www.sec.gov/Archives/edgar/data/1834019/000120919122059480"))
