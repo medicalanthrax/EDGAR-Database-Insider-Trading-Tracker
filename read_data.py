@@ -7,9 +7,8 @@ from text import text
 def read_data(url):
     """ Given a url to a form 4 xml sheet, return a list of the relevant information
 
-    Example Usage:
-        print(read_data("example_url.com"))
-        my_data = read_data("example_url.com")
+    Returns: [Date, Name, Ticker, Title, [[Security Title, Transaction Code, Price, No. Shares]]]
+    Please note that multiple transactions may be listed, hence the list of transaction lists.
 
     """
     page = requests.get(url,headers={"User-Agent" : "Carlo Tran carlotran4@gmail.com"},timeout=30)

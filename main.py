@@ -1,9 +1,15 @@
-#import PySimpleGUI as sg
-from collectLinks import collectLinks
-from getDoc import getDoc
+"""Collect all the various methods into one"""
+
+from collect_dirs import collect_dirs
+from get_link import get_link
 from read_data import read_data
 
-links = collectLinks()
-for link in links:
-    print(link)
-    print(read_data(getDoc(link)))
+def main():
+    """Main"""
+    for i in collect_dirs():
+        print(
+            read_data(
+                get_link(i)
+            )
+        )
+main()
