@@ -72,8 +72,9 @@ def read_data(url):
         transaction_code = transaction_code+text(i.transactionCode)+"\n"
         transaction_price_per_share = transaction_price_per_share + \
             text(i.transactionPricePerShare.value)+"\n"
-        transaction_shares = transaction_shares + \
-            text(i.transactionShares.value)+"\n"
+        if(i.transactionShares) is not None:
+            transaction_shares = transaction_shares + \
+                text(i.transactionShares.value)+"\n"
 
     for i in non_derivative_transactions:
         security_title = security_title+text(i.securityTitle.value)+"\n"
