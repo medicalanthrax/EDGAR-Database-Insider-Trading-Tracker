@@ -4,6 +4,7 @@ import csv
 from collect_dirs import collect_dirs
 from get_link import get_link
 from read_data import read_data
+import tabview as t
 
 
 def main():
@@ -34,4 +35,5 @@ def main():
     for i in old_entries:
         my_writer.writerow(i)
     file.close()
+    t.view("data.csv")
 main()
