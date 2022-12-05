@@ -1,4 +1,31 @@
-Date,Company,Title,Stock Title,Transaction Code,No. of Shares,Price Paid Per Share
+Date,Company,Title,Stock Title,Code,No. Shares,Price Per Share
+2022-12-01,HELEN OF TROY LTD(HELE),Director,"""Common Shares, Par value $0.10 per share""","""A""","""242""","""0"""
+2022-12-01,"Andersons, Inc.(ANDE)",Director,"""RESTRICTED SHARE UNIT (2023)""","""A""","""1453""","""0"""
+2022-12-01,HELEN OF TROY LTD(HELE),Director,"""Common Shares, Par value $0.10 per share""","""A""","""242""","""0"""
+2022-12-01,HELEN OF TROY LTD(HELE),Director,"""Common Shares, Par value $0.10 per share""","""A""","""242""","""0"""
+2022-12-01,GLOBE LIFE INC.(GL),"Director,Co-Chaiman & CEO","""Employee Stock Option (Right to Buy)
+Common Stock
+Common Stock""","""M
+M
+S""","""12000
+12000
+12000""","""0
+50.64
+119.7448"""
+2022-12-01,"LM FUNDING AMERICA, INC.(LMFA)",Director,"""Stock Option (right to buy)""","""A""","""37314""","""0"""
+2022-12-02,NOVAGOLD RESOURCES INC(NG),,"""Stock Option (right to buy)
+Common Shares
+Common Shares
+Common Shares""","""M
+M
+F
+S""","""30000
+30000
+18104
+11896""","""0.00
+3.64
+6.03
+6.01"""
 2022-12-01,GLOBE LIFE INC.(GL),"Director,Co-Chairman & CEO","""Employee Stock Option (Right to Buy)
 Common Stock
 Common Stock""","""M

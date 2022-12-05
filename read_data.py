@@ -8,7 +8,9 @@ from text import text
 def read_data(url):
     """ Given a url to a form 4 xml sheet, return a list of the relevant information
 
-    Returns: [Date, Name, Ticker, Title, [[Security Title, Transaction Code, Price, No. Shares]]]
+    Returns:[Date, Name, Ticker, Title,
+            Security Titles(sep=\\n), Transaction Code(sep=\\n),
+            No. Shares(sep=\\n), Price Per Share(sep=\\n)]
     Please note that multiple transactions may be listed, hence the list of transaction lists.
 
     """

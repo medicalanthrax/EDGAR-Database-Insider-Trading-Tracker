@@ -28,7 +28,7 @@ def main():
     file = open("data.csv", mode='w', encoding="utf-8",newline="")
     my_writer = csv.writer(file, delimiter=",")
     my_writer.writerow(['Date', 'Company', 'Title', 'Stock Title',
-                       'Transaction Code', 'No. of Shares', 'Price Paid Per Share'])
+                       'Code', 'No. Shares', 'Price Per Share'])
     for i in new_entries:
         my_writer.writerow(i)
     for i in old_entries:
