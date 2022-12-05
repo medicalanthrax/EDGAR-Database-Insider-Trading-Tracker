@@ -35,6 +35,7 @@ def collect_dirs(url="https://www.sec.gov/cgi-bin/browse-edgar?company=&CIK=&typ
 
         file = open("acc_nos.txt", "r", encoding="utf-8")
         matches = False
+        print(acc_no[len(acc_no)-1])
         for line in file:
             if acc_no[len(acc_no)-1] == line[0:len(line)-1]:
                 matches = True

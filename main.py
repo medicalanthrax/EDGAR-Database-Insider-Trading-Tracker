@@ -30,10 +30,8 @@ def main():
     my_writer.writerow(['Date', 'Company', 'Title', 'Stock Title',
                        'Transaction Code', 'No. of Shares', 'Price Paid Per Share'])
     for i in new_entries:
-        print(i)
         my_writer.writerow(i)
     for i in old_entries:
-        print(i)
         my_writer.writerow(i)
     file.close()
 main()
