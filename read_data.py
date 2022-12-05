@@ -42,6 +42,9 @@ def read_data(url):
         title+="Officer,"
     if is_other == "1":
         title+= "Other"
+    if len(title)>0 and title[len(title)-1] == ",":
+        title = title[0:len(title)-1]
+
 
 
     derivative_transactions = soup.find_all("derivativeTransaction")
@@ -62,5 +65,4 @@ def read_data(url):
             text(i.transactionPricePerShare.value),
             text(i.transactionShares.value)
         ])
-
-    return ([date,name,ticker,title,transactions])
+    return ([date,f"{name}({ticker})",title,transactions])
