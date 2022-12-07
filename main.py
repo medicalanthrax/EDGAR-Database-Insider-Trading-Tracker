@@ -1,14 +1,15 @@
 """Collect all the various methods into one and display"""
 
 import csv
+import time
 from collect_dirs import collect_dirs
 from get_link import get_link
 from read_data import read_data
 import tabview as t
 
-
 def main():
     """Main"""
+    TIME_1 = time.perf_counter()
     file = open("data.csv", mode='r', encoding="utf-8",newline="")
     my_reader = csv.reader(file)
     old_entries = []
@@ -35,5 +36,7 @@ def main():
     for i in old_entries:
         my_writer.writerow(i)
     file.close()
+    TIME_2 = time.perf_counter()
+    print(TIME_2-TIME_1)
     t.view("data.csv")
 main()
