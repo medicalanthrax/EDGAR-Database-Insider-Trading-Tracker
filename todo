@@ -4,6 +4,11 @@ Increase efficiency
     asyncio?
     for 49 links- 33.35 seconds
     for 460 links- 316.68 seconds
+    for 40 links- 21.73 seconds
+    for 30 links- 16.83 seconds
+    for 166 links- 114.17 seconds
+    for 306 links- 209.92 seconds
+    for 534- 353.64 seconds
     O(n) time- 0.7 seconds per entry
 find a way to get more historical data (past year)
     https://www.sec.gov/Archives/edgar/full-index/
