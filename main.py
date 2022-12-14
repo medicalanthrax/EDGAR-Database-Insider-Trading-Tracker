@@ -38,5 +38,5 @@ def main():
     file.close()
     TIME_2 = time.perf_counter()
     print(TIME_2-TIME_1)
-    t.view("data.csv")
+#Uncomment to get csv viewer    t.view("data.csv")
 main()

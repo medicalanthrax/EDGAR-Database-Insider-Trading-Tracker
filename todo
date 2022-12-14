@@ -1,7 +1,10 @@
 Increase efficiency
-    Each request takes ~0.15 seconds, two per entry.
-    multithreading?
-    asyncio?
+    Asynchronyze the data collection part
+    How to preserve the order at the same time? 
+    Split into two lists: first half and second half
+        Process
+        Add them back together
+
     for 49 links- 33.35 seconds
     for 460 links- 316.68 seconds
     for 40 links- 21.73 seconds
@@ -9,6 +12,8 @@ Increase efficiency
     for 166 links- 114.17 seconds
     for 306 links- 209.92 seconds
     for 534- 353.64 seconds
-    O(n) time- 0.7 seconds per entry
+    for 120 links- 92.10 seconds
+    for 629 links-414.03 seconds
+    O(n) time- 0.68 seconds per entry
 find a way to get more historical data (past year)
     https://www.sec.gov/Archives/edgar/full-index/
