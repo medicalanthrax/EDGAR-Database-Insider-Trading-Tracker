@@ -23,43 +23,42 @@ def read_data(url):
     name = soup.issuerName.text
     ticker = soup.issuerTradingSymbol.text
 
+    titles = ""
+
+    for i in soup.find_all("reportingOwner"):
     # Prevent NoneType errors due to inconsistent existence of title variables.
-    if (soup.isDirector) is not None:
-        is_director = soup.isDirector.text
-    else:
         is_director = "0"
-    if (soup.isOfficer) is not None:
-        is_officer = soup.isOfficer.text
-    else:
+        if (i.isDirector) is not None:
+            is_director = i.isDirector.text
         is_officer = "0"
-    if soup.isOther is not None:
-        is_other = soup.isOther.text
-    else:
+        if (i.isOfficer) is not None:
+            is_officer = i.isOfficer.text
         is_other = "0"
-    if is_officer == "1":
-        officer_title = soup.officerTitle.text
-    else:
+        if i.isOther is not None:
+            is_other = i.isOther.text
         officer_title = ""
-    if (soup.isTenPercentOwner) is not None:
-        is_ten_percent_owner = soup.isTenPercentOwner.text
-    else:
+        if is_officer == "1":
+            officer_title = i.officerTitle.text
         is_ten_percent_owner = "0"
+        if (i.isTenPercentOwner) is not None:
+            is_ten_percent_owner = i.isTenPercentOwner.text
 
-    title = ""
-    if is_director == "1":
-        title += "Director,"
-    if is_officer == "1" and len(officer_title) > 0:
-        title += officer_title+","
-    elif is_officer == "1":
-        title += "Officer,"
-    if is_ten_percent_owner == "1":
-        title += "%10+ shareholder"
-    if is_other == "1":
-        title += "Other"
-    # Remove hanging comma of title.
-    if len(title) > 0 and title[len(title)-1] == ",":
-        title = title[0:len(title)-1]
-
+        title = ""
+        if is_director == "1":
+            title += "Director,"
+        if is_officer == "1" and len(officer_title) > 0:
+            title += officer_title+","
+        elif is_officer == "1":
+            title += "Officer,"
+        if is_ten_percent_owner == "1":
+            title += "%10+ shareholder"
+        if is_other == "1":
+            title += "Other"
+        # Remove hanging comma of title.
+        if len(title) > 0 and title[len(title)-1] == ",":
+            title = title[0:len(title)-1]
+        titles = titles+title+"\n"
+    titles = titles[0:-1]
     derivative_transactions = soup.find_all("derivativeTransaction")
     non_derivative_transactions = soup.find_all("nonDerivativeTransaction")
 
@@ -93,8 +92,8 @@ def read_data(url):
     if len(transaction_shares)>0 and transaction_shares[-1] == "\n":
         transaction_shares = transaction_shares[0:-1]
     return ([date,
-            f"{name}({ticker})",
-            f"{title}",
+            f"{name} ({ticker})",
+            f"\"{titles}\"",
             f"\"{security_title}\"",
             f"\"{transaction_code}\"",
             f"\"{transaction_shares}\"",

@@ -1,5 +1,5 @@
 """Collect all the various methods into one and display"""
-
+#pylint: disable=E0401
 import csv
 import time
 from collect_dirs import collect_dirs
