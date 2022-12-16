@@ -10,7 +10,7 @@ from read_data import read_data
 
 def main():
     """Main"""
-    TIME_1 = time.perf_counter()
+    start = time.perf_counter()
     file = open("data.csv", mode='r', encoding="utf-8",newline="")
     my_reader = csv.reader(file)
     old_entries = []
@@ -37,7 +37,7 @@ def main():
     for i in old_entries:
         my_writer.writerow(i)
     file.close()
-    TIME_2 = time.perf_counter()
-    print(TIME_2-TIME_1)
+    end = time.perf_counter()
+    print(start-end)
 #Uncomment to get csv viewer    t.view("data.csv")
 main()
