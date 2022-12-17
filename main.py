@@ -38,6 +38,6 @@ def main():
         my_writer.writerow(i)
     file.close()
     end = time.perf_counter()
-    print(start-end)
+    print(end-start)
 #Uncomment to get csv viewer    t.view("data.csv")
 main()
