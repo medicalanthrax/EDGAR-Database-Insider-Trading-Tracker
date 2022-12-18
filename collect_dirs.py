@@ -1,5 +1,6 @@
 """Contains collect_dirs"""
 import re
+
 import requests
 from bs4 import BeautifulSoup
 
