@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from text import text
 from ratelimiter import RateLimiter
 
-@RateLimiter(max_calls=10,period=1)
+@RateLimiter(max_calls=5,period=1)
 def read_data(url):
     """ Given a url to a form 4 xml sheet, return a list of the relevant information
 
@@ -23,9 +23,9 @@ def read_data(url):
 
         soup = BeautifulSoup(page.content, "xml")
 
-        date = text(soup.periodOfReport)
-        name = text(soup.issuerName)
-        ticker = text(soup.issuerTradingSymbol)
+        date = soup.periodOfReport.text
+        name = soup.periodOfReport.text
+        ticker = soup.periodOfReport.text
 
         titles = ""
 
@@ -105,5 +105,5 @@ def read_data(url):
                 ])
     except:           #pylint: disable = bare-except
         print(f"error at {url}")
-        time.sleep(120)
+        time.sleep(630)
         return []
