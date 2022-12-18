@@ -15,13 +15,13 @@ def read_data(url):
 
     """
     page = requests.get(
-        url, headers={"User-Agent": "Carlo Tran carlotran4@gmail.com"}, timeout=30)
+        url, headers={"User-Agent": "Carlo Tran carlotran4@gmail.com"}, timeout=120)
 
     soup = BeautifulSoup(page.content, "xml")
 
-    date = soup.periodOfReport.text
-    name = soup.issuerName.text
-    ticker = soup.issuerTradingSymbol.text
+    date = text(soup.periodOfReport)
+    name = text(soup.issuerName)
+    ticker = text(soup.issuerTradingSymbol)
 
     titles = ""
 
