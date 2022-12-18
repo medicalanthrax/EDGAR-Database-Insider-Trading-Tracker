@@ -5,8 +5,9 @@ import time
 import requests
 from bs4 import BeautifulSoup
 from text import text
+from ratelimiter import RateLimiter
 
-
+@RateLimiter(max_calls=10,period=1)
 def read_data(url):
     """ Given a url to a form 4 xml sheet, return a list of the relevant information
 
