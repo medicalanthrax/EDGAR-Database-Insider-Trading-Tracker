@@ -24,8 +24,8 @@ def read_data(url):
         soup = BeautifulSoup(page.content, "xml")
 
         date = soup.periodOfReport.text
-        name = soup.periodOfReport.text
-        ticker = soup.periodOfReport.text
+        name = soup.issuerName.text
+        ticker = soup.issuerTradingSymbol.text
 
         titles = ""
 

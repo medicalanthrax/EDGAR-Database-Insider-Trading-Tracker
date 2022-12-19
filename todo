@@ -17,3 +17,6 @@ Increase efficiency
     O(n) time- 0.68 seconds per entry
 find a way to get more historical data (past year)
     https://www.sec.gov/Archives/edgar/full-index/
+
+AlphaVantage API key: Y08A7DHDJ0Y1SL4G
+use time-series weekly
